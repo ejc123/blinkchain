@@ -6,11 +6,11 @@
 # LDFLAGS       linker flags for linking all binaries
 
 # Initialize some variables if not set
-LDFLAGS ?=
+LDFLAGS += -lm
 CFLAGS ?= -O2 -Wall -Wextra -Wno-unused-parameter
 CC ?= $(CROSSCOMPILE)-gcc
 
-CFLAGS += -std=gnu99
+CFLAGS += -std=gnu99 -D_GNU_SOURCE
 
 ifeq ($(MIX_COMPILE_PATH),)
   $(error MIX_COMPILE_PATH should be set by elixir_make!)
