@@ -1,4 +1,4 @@
-defmodule Blinkchain.Mixfile do
+defmodule Blinkchain.MixProject do
   use Mix.Project
 
   @version "1.0.0"
@@ -8,7 +8,7 @@ defmodule Blinkchain.Mixfile do
       app: :blinkchain,
       version: @version,
       description: "Drive WS2812B \"NeoPixel\" RGB LED strips from a Raspberry Pi using Elixir.",
-      elixir: "~> 1.6",
+      elixir: "~> 1.10",
       make_clean: ["clean"],
       make_targets: ["all"],
       compilers: [:elixir_make | Mix.compilers()],
@@ -32,7 +32,7 @@ defmodule Blinkchain.Mixfile do
         ]
       ],
       name: "Blinkchain",
-      source_url: "https://github.com/GregMefford/blinkchain"
+      source_url: "https://github.com/ejc123/blinkchain"
     ]
   end
 
@@ -42,11 +42,11 @@ defmodule Blinkchain.Mixfile do
 
   defp deps do
     [
-      {:credo, "~> 1.0", only: [:dev, :test], runtime: false},
-      {:dialyxir, "~> 0.5", only: [:dev], runtime: false},
-      {:elixir_make, "~> 0.6", runtime: false},
-      {:ex_doc, "~> 0.19", only: [:dev], runtime: false},
-      {:excoveralls, "~> 0.10", only: :test}
+      {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
+      {:dialyxir, "~> 1.2", only: [:dev], runtime: false},
+      {:elixir_make, "~> 0.7", runtime: false},
+      {:ex_doc, "~> 0.29", only: [:dev], runtime: false},
+      {:excoveralls, "~> 0.16", only: :test}
     ]
   end
 
